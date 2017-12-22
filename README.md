@@ -9,8 +9,10 @@ To determine the strength of the relationship between a query and a web page, as
 The strength of the relationship is the sum of the products of the weights associated with each keyword that appears both in the web page list and the query list.
 
 For example, assume the following web pages and keyword lists:
+
 Page 1: Ford, Car, Review
 Page 2:Toyota, Car
+
 Page 3: Car, Ford
 For N equal 8, a query with keywords Ford and Car in that order yields the following strength ratings.
 Page 1: (8x8 + 7x7) = 113
@@ -26,3 +28,24 @@ Input data consist of one line for each web page and query.A line consists of a 
 
 Output
 For each query, identify the 5 (or fewer) pages stored that are the most relevant to the query. Print a single line containing the query identifier, a colon, and the page identifiers of the five most relevant pages in the decreasing order of relevance. Page identifiers consist of the letter “P” followed by the page number. Query identifiers consist of the letter “Q” followed by the query number. If several pages have the same relevance, list them by increasing page number. Do not list pages that have no relationship (zero strength), even if fewer than five pages are identified.
+
+Sample Input
+P Ford Car Review
+P Review Car
+P Review Ford
+P Toyota Car
+P Honda Car
+P Car
+Q Ford
+Q Car
+Q Review
+Q Ford Review
+Q Ford Car
+Q cooking French
+Output for the Sample Input
+Q1: P1 P3
+Q2: P6 P1 P2 P4 P5
+Q3: P2 P3 P1
+Q4: P3 P1 P2
+Q5: P1 P3 P6 P2 P4
+Q6:
